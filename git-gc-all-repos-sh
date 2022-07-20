@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for n in `find $1 -name .git`
+do (
+    cd ${n/%.git/}
+    git prune -v
+)
+done
